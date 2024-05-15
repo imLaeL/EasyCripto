@@ -1,2 +1,2 @@
 # EasyCripto
-Uma ferramente capaz de codificar strings em hashes. 
+Uma ferramente capaz de gerar hashes a partir de uma string 
