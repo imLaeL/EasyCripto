@@ -6,7 +6,6 @@ def criptbcrypt(password):
     bytes = password.encode('utf-8')
     salt = bcrypt.gensalt()
     hash = bcrypt.hashpw(bytes, salt)
-
     print(f'Essa é a sua nova senha criptografada: {hash}')
 
 #Criptografia 256
