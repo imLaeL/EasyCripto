@@ -1,4 +1,5 @@
 import tkinter as tk
+import customtkinter
 import hashlib
 import bcrypt
 import secrets
@@ -46,34 +47,36 @@ def generate_hash():
 
 #Interface gráfica
     
-root = tk.Tk()
+customtkinter.set_appearance_mode('dark')
+
+root = customtkinter.CTk()
 root.title("EasyCripto")
 
-root.geometry("600x300")
+root.geometry("600x500")
 
 #Insere texto
 
-tk.Label(root, text="Insira uma string:").pack(pady=5)
-entry = tk.Entry(root, width=50)
-entry.pack(pady=5)
+customtkinter.CTkLabel(root, text="Insira uma string:").pack(pady=10)
+entry = customtkinter.CTkEntry(root, width=250)
+entry.pack(pady=10)
 
 #Selecioanr o tipo de hash
 
-tk.Label(root, text="Selecione o tipo de hash:").pack(pady=5)
-hash_type_var = tk.StringVar(value="SHA-256")
-hash_type_menu = tk.OptionMenu(root, hash_type_var, "SHA-256", "SHA-1", "bcrypt")
-hash_type_menu.pack(pady=5)
+customtkinter.CTkLabel(root, text="Selecione o tipo de hash:").pack(pady=10)
+hash_type_var = customtkinter.StringVar(value="SHA-256")
+hash_type_menu = customtkinter.CTkOptionMenu(root, variable=hash_type_var, values=["SHA-256", "SHA-1", "bcrypt"])
+hash_type_menu.pack(pady=10)
 
 #Resultado
 
-tk.Label(root, text="Resultado:").pack(pady=5)
-result_var = tk.StringVar()
-result_label = tk.Entry(root, textvariable=result_var, width=70, state="readonly")
-result_label.pack(pady=7)
+customtkinter.CTkLabel(root, text="Resultado:").pack(pady=5)
+result_var = customtkinter.StringVar()
+result_label = customtkinter.CTkEntry(root, textvariable=result_var, width=500, state="readonly")
+result_label.pack(pady=10)
 
 #Botão para gerar hash
 
-generate_button = tk.Button(root, text="Gerar Hash", command=generate_hash)
-generate_button.pack(pady=10)
+generate_button = customtkinter.CTkButton(root, text="Gerar Hash", command=generate_hash)
+generate_button.pack(pady=20)
 
 root.mainloop()
