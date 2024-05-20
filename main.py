@@ -12,7 +12,7 @@ def criptbcrypt(password):
     hash = bcrypt.hashpw(bytes, salt)
     return hash
 
-#Criptografia 256 feita por Leonardo
+#Criptografia sha256 feita por Leonardo
 
 def criptsha256(password):
     hash = hashlib.sha256(password.encode('utf-8')).hexdigest()
@@ -25,6 +25,8 @@ def criptsha1(password):
     hash_object = hashlib.sha1((password + salt).encode('utf-8'))
     hash = hash_object.hexdigest()
     return hash
+
+#Função para gerar hashes
 
 def generate_hash():
     input_text = entry.get()
@@ -54,13 +56,18 @@ root.title("EasyCripto")
 
 root.geometry("600x500")
 
+
+#Página de codificação
+
+
+#----------------- Codificaçaõ -----------------#
 #Insere texto
 
 customtkinter.CTkLabel(root, text="Insira uma string:").pack(pady=10)
 entry = customtkinter.CTkEntry(root, width=250)
 entry.pack(pady=10)
 
-#Selecioanr o tipo de hash
+#Selecionar o tipo de hash
 
 customtkinter.CTkLabel(root, text="Selecione o tipo de hash:").pack(pady=10)
 hash_type_var = customtkinter.StringVar(value="SHA-256")
@@ -78,5 +85,11 @@ result_label.pack(pady=10)
 
 generate_button = customtkinter.CTkButton(root, text="Gerar Hash", command=generate_hash)
 generate_button.pack(pady=20)
+
+#------------------ Decodificação ------------------#
+
+
+
+#Roda o programa
 
 root.mainloop()
