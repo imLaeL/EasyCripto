@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import filedialog
 import customtkinter
 import hashlib
 import bcrypt
@@ -46,6 +47,31 @@ def generate_hash():
         result = "Tipo de hash inválido."
 
     result_var.set(result)
+
+#Carrega a wordlist
+
+# def load_wordlist():
+#     file_path = filedialog.askopenfilename()
+#     if file_path:
+#         with open(file_path, 'r', encoding='utf-8') as file:
+#             wordlist = file.read().splitlines()
+#             return wordlist
+#     else:
+#         return []
+    
+#Função deecripta hashes
+
+# def decrypt_hash():
+#     target_hash = hash_entry.get().strip()
+#     if not target_hash:
+#         result_var.set("Por favor, insira um hash para descriptografar.")
+#         return
+    
+#     wordlist = load_wordlist()
+#     if not wordlist:
+#         result_var.set("Selecione uma wordlist para descriptografar.")
+#         return
+
 
 #Interface gráfica
     
