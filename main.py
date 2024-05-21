@@ -56,7 +56,10 @@ root.geometry("600x500")
 
 #Insere texto
 
-customtkinter.CTkLabel(root, text="Insira uma string:").pack(pady=10)
+customtkinter.CTkLabel(root, text="Bem-Vindo ao EasyCripto!").pack(pady=10)
+
+
+customtkinter.CTkLabel(root, text="Insira sua senha:").pack(pady=10)
 entry = customtkinter.CTkEntry(root, width=250)
 entry.pack(pady=10)
 
@@ -78,5 +81,39 @@ result_label.pack(pady=10)
 
 generate_button = customtkinter.CTkButton(root, text="Gerar Hash", command=generate_hash)
 generate_button.pack(pady=20)
+
+
+#PARTE 2 - SEGUNDA TELA
+#Descriptografia 
+
+def open_decrypt_window():
+    decrypt_window = customtkinter.CTkToplevel(root)
+    decrypt_window.title("EasyCripto")
+    decrypt_window.geometry("600x500")
+
+    customtkinter.CTkLabel(decrypt_window, text="Insira sua senha hash:").pack(pady=10)
+    decrypt_entry = customtkinter.CTkEntry(decrypt_window, width=500)
+    decrypt_entry.pack(pady=10)
+
+    customtkinter.CTkLabel(decrypt_window, text="Selecione o tipo de hash:").pack(pady=10)
+    decrypt_hash_type_var = customtkinter.StringVar(value="SHA-256")
+    decrypt_hash_type_menu = customtkinter.CTkOptionMenu(decrypt_window, variable=decrypt_hash_type_var, values=["SHA-256", "SHA-1", "bcrypt"])
+    decrypt_hash_type_menu.pack(pady=10)
+
+    customtkinter.CTkLabel(decrypt_window, text="Sua Senha:").pack(pady=5)
+    decrypt_resultado_var = customtkinter.StringVar()
+    decrypt_resultado_label = customtkinter.CTkEntry(decrypt_window, textvariable=decrypt_resultado_var, width=250, state="readonly")
+    decrypt_resultado_label.pack(pady=10)
+
+    def decrypt(descriptografia):
+        decrypt_resultado_var.set("ADICIONAR O QUE FALTA")
+
+    generate_button2 = customtkinter.CTkButton(decrypt_window, text="Desfazer hash", command=decrypt_hash_type_var)
+    generate_button2.pack(pady=20)
+
+decrypt_button = customtkinter.CTkButton(root, text="Desfazer hash", fg_color="#FF2655", hover_color="#FF073D", command=open_decrypt_window)
+decrypt_button.pack(pady=20)
+
+
 
 root.mainloop()
