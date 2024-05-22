@@ -18,8 +18,8 @@
 <h2 id="layout">🎨 Layout</h2>
 
 <p align="center">
-    <img src="../.github/example.png" alt="Image Example" width="400px">
-    <img src="../.github/example.png" alt="Image Example" width="400px">
+    <img src="/img/Tela-1.png" alt="Gerar Hash" width="400px">
+    <img src="/img/Tela-2.png" alt="Desfazer Hash" width="400px">
 </p>
 
 <h2 id="technologies">💻 Tecnologias/Technologies</h2>
@@ -67,7 +67,7 @@ Special thank you for all people that contributed for this project.
   <tr>
     <td align="center">
       <a href="https://github.com/imLaeL">
-        <img src="Isaque" width="100px;" alt="Isaque Lael"/><br>
+        <img src="/img/Isaque.jpeg" width="100px;" alt="Isaque Lael"/><br>
         <sub>
           <b>Isaque Lael</b>
         </sub>
@@ -75,7 +75,7 @@ Special thank you for all people that contributed for this project.
     </td>
     <td align="center">
       <a href="https://github.com/JoaoEstevam01">
-        <img src="Joao" width="100px;" alt="João Estevam"/><br>
+        <img src="/img/João.jpeg" width="100px;" alt="João Estevam"/><br>
         <sub>
           <b>João Estevam</b>
         </sub>
@@ -91,7 +91,7 @@ Special thank you for all people that contributed for this project.
     </td>
       <td align="center">
       <a href="https://github.com/LeoLuna307">
-        <img src="Leo Luna" width="100px;" alt="Leo Luna"/><br>
+        <img src="/img/Leo.jpeg" width="100px;" alt="Leo Luna"/><br>
         <sub>
           <b>Leonardo Luna</b>
         </sub>
@@ -113,8 +113,8 @@ Special thank you for all people that contributed for this project.
 Caso deseje agregar ou adicionar mais ideias a esse projeto:
 
 Email: 
-- Isaque@gmail.com
+- isaquelael38@gmail.com
 - joaoestevam.1204@gmail.com
+- leonardoluna.github@gmail.com
 - maria@gmail.com
-- leo@gmail.com
 - camila@gmail.com
