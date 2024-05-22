@@ -59,7 +59,7 @@ def generate_hash():
 #     else:
 #         return []
     
-#Função deecripta hashes
+#Função decripta hashes
 
 # def decrypt_hash():
 #     target_hash = hash_entry.get().strip()
