@@ -40,6 +40,8 @@ def generate_hash():
         result = criptsha1(input_text)
     elif hash_type == "bcrypt":
         result = criptbcrypt(input_text)
+    #elif hash_type == "MD5":
+        #result = criptmd5(input_text)
     else:
         result = "Tipo de hash inválido."
 
@@ -67,7 +69,7 @@ entry.pack(pady=10)
 
 customtkinter.CTkLabel(root, text="Selecione o tipo de hash:").pack(pady=10)
 hash_type_var = customtkinter.StringVar(value="SHA-256")
-hash_type_menu = customtkinter.CTkOptionMenu(root, variable=hash_type_var, values=["SHA-256", "SHA-1", "bcrypt"])
+hash_type_menu = customtkinter.CTkOptionMenu(root, variable=hash_type_var, values=["SHA-256", "SHA-1", "bcrypt", "MD5"])
 hash_type_menu.pack(pady=10)
 
 #Resultado
@@ -97,7 +99,7 @@ def open_decrypt_window():
 
     customtkinter.CTkLabel(decrypt_window, text="Selecione o tipo de hash:").pack(pady=10)
     decrypt_hash_type_var = customtkinter.StringVar(value="SHA-256")
-    decrypt_hash_type_menu = customtkinter.CTkOptionMenu(decrypt_window, variable=decrypt_hash_type_var, values=["SHA-256", "SHA-1", "bcrypt"])
+    decrypt_hash_type_menu = customtkinter.CTkOptionMenu(decrypt_window, variable=decrypt_hash_type_var, values=["SHA-256", "SHA-1", "bcrypt", "MD5"])
     decrypt_hash_type_menu.pack(pady=10)
 
     customtkinter.CTkLabel(decrypt_window, text="Sua Senha:").pack(pady=5)
