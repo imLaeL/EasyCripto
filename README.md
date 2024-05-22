@@ -59,9 +59,9 @@ Por fim, rodar/Finally, run the program:
 python main.py
 ```
 
-<h2 id="colab">🤝 Collaborators</h2>
+<h2 id="colab">🤝 Colaboradores/Collaborators</h2>
 
-Special thank you for all people that contributed for this project.
+Um agradecimento a todos que participaram/A thank you to everyone who participated.
 
 <table>
   <tr>
@@ -110,7 +110,7 @@ Special thank you for all people that contributed for this project.
 
 <h2 id="contribute">📫 Contribua/Contribute</h2>
 
-Caso deseje agregar ou adicionar mais ideias a esse projeto:
+Se desejar agregar ou adicionar mais ideias a este projeto/If you wish to add or contribute more ideas to this project:
 
 Email: 
 - isaquelael38@gmail.com
