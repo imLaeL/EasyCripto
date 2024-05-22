@@ -143,7 +143,7 @@ def open_decrypt_window():
 
     customtkinter.CTkLabel(decrypt_window, text="Selecione o tipo de hash:").pack(pady=10)
     decrypt_hash_type_var = customtkinter.StringVar(value="SHA-256")
-    decrypt_hash_type_menu = customtkinter.CTkOptionMenu(decrypt_window, variable=decrypt_hash_type_var, values=["SHA-256", "SHA-1", "bcrypt"])
+    decrypt_hash_type_menu = customtkinter.CTkOptionMenu(decrypt_window, variable=decrypt_hash_type_var, values=["SHA-256", "SHA-1", "bcrypt", "MD5"])
     decrypt_hash_type_menu.pack(pady=10)
 
     load_button = customtkinter.CTkButton(decrypt_window, text="Carregar wordlist", command=load_wordlist)
