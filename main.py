@@ -50,27 +50,16 @@ def generate_hash():
 
 #Carrega a wordlist
 
-# def load_wordlist():
-#     file_path = filedialog.askopenfilename()
-#     if file_path:
-#         with open(file_path, 'r', encoding='utf-8') as file:
-#             wordlist = file.read().splitlines()
-#             return wordlist
-#     else:
-#         return []
+def load_wordlist():
+    file_path = filedialog.askopenfilename()
+    if file_path:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            wordlist = file.read().splitlines()
+            return wordlist
+    else:
+        return []
     
 #Função decripta hashes
-
-# def decrypt_hash():
-#     target_hash = hash_entry.get().strip()
-#     if not target_hash:
-#         result_var.set("Por favor, insira um hash para descriptografar.")
-#         return
-    
-#     wordlist = load_wordlist()
-#     if not wordlist:
-#         result_var.set("Selecione uma wordlist para descriptografar.")
-#         return
 
 
 #Interface gráfica
@@ -89,7 +78,10 @@ root.geometry("600x500")
 #----------------- Codificaçaõ -----------------#
 #Insere texto
 
-customtkinter.CTkLabel(root, text="Insira uma string:").pack(pady=10)
+customtkinter.CTkLabel(root, text="Bem-Vindo ao EasyCripto!").pack(pady=10)
+
+
+customtkinter.CTkLabel(root, text="Insira sua senha:").pack(pady=10)
 entry = customtkinter.CTkEntry(root, width=250)
 entry.pack(pady=10)
 
@@ -112,10 +104,60 @@ result_label.pack(pady=10)
 generate_button = customtkinter.CTkButton(root, text="Gerar Hash", command=generate_hash)
 generate_button.pack(pady=20)
 
-#------------------ Decodificação ------------------#
+
+#PARTE 2 - SEGUNDA TELA
+#Descriptografia 
+
+def open_decrypt_window():
+
+    def decrypt_hash():
+        target_hash = decrypt_entry.get().strip()
+        if not target_hash:
+            result_var.set("Por favor, insira um hash para descriptografar.")
+            return
+    
+        wordlist = load_wordlist()
+        if not wordlist:
+            result_var.set("Selecione uma wordlist para descriptografar.")
+            return
+
+        #for word in wordlist:
+            #Descriptografia sha256
+
+            #Descriptografia sha1
+
+            #Descriptografia md5
+
+        decrypt_resultado_var.set("Nenhuma correspondência encontrada na wordlist.")
 
 
+    decrypt_window = customtkinter.CTkToplevel(root)
+    decrypt_window.title("EasyCripto")
+    decrypt_window.geometry("600x500")
 
-#Roda o programa
+    customtkinter.CTkLabel(decrypt_window, text="Insira o hash:").pack(pady=10)
+    decrypt_entry = customtkinter.CTkEntry(decrypt_window, width=500)
+    decrypt_entry.pack(pady=10)
+
+    customtkinter.CTkLabel(decrypt_window, text="Selecione o tipo de hash:").pack(pady=10)
+    decrypt_hash_type_var = customtkinter.StringVar(value="SHA-256")
+    decrypt_hash_type_menu = customtkinter.CTkOptionMenu(decrypt_window, variable=decrypt_hash_type_var, values=["SHA-256", "SHA-1", "bcrypt"])
+    decrypt_hash_type_menu.pack(pady=10)
+
+    load_button = customtkinter.CTkButton(decrypt_window, text="Carregar wordlist", command=load_wordlist)
+    load_button.pack(pady=10)
+
+    customtkinter.CTkLabel(decrypt_window, text="Sua Senha:").pack(pady=5)
+    decrypt_resultado_var = customtkinter.StringVar()
+    decrypt_resultado_label = customtkinter.CTkEntry(decrypt_window, textvariable=decrypt_resultado_var, width=250, state="readonly")
+    decrypt_resultado_label.pack(pady=10)
+
+    generate_button2 = customtkinter.CTkButton(decrypt_window, text="Desfazer hash", command=decrypt_hash)
+    generate_button2.pack(pady=20)
+
+decrypt_button = customtkinter.CTkButton(root, text="Desfazer hash", fg_color="#FF2655", hover_color="#FF073D", command=open_decrypt_window)
+decrypt_button.pack(pady=20)
+
+
 
 root.mainloop()
