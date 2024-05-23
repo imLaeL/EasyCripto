@@ -27,6 +27,14 @@ def criptsha1(password):
     hash = hash_object.hexdigest()
     return hash
 
+#Criptografia md5 feita por Camila
+
+def criptmd5(password):
+    hash_md5 = hashlib.md5()
+    hash_md5.update(password.encode('utf-8'))
+    hash = hash_md5.hexdigest()
+    return hash
+
 #Função para gerar hashes
 
 def generate_hash():
@@ -43,8 +51,8 @@ def generate_hash():
         result = criptsha1(input_text)
     elif hash_type == "bcrypt":
         result = criptbcrypt(input_text)
-    #elif hash_type == "MD5":
-        #result = criptmd5(input_text)
+    elif hash_type == "MD5":
+        result = criptmd5(input_text)
     else:
         result = "Tipo de hash inválido."
 
