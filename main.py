@@ -141,7 +141,6 @@ def open_decrypt_window():
             result_var.set(f"Hash descriptografado (SHA1): {word}")
             return
 
-
             #Descriptografia md5
 
         decrypt_resultado_var.set("Nenhuma correspondência encontrada na wordlist.")
