@@ -70,8 +70,6 @@ root.geometry("600x500")
 
 #Página de codificação
 
-
-#----------------- Codificaçaõ -----------------#
 #Insere texto
 
 customtkinter.CTkLabel(root, text="Bem-Vindo ao EasyCripto!").pack(pady=10)
