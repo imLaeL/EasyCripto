@@ -22,8 +22,7 @@ def criptsha256(password):
 #Criptografia sha1 feita por Gabrielly
     
 def criptsha1(password):
-    salt = secrets.token_hex(16) 
-    hash_object = hashlib.sha1((password + salt).encode('utf-8'))
+    hash_object = hashlib.sha1((password).encode('utf-8'))
     hash = hash_object.hexdigest()
     return hash
 
@@ -57,17 +56,6 @@ def generate_hash():
         result = "Tipo de hash inválido."
 
     result_var.set(result)
-
-#Carrega a wordlist
-
-def load_wordlist():
-    file_path = filedialog.askopenfilename()
-    if file_path:
-        with open(file_path, 'r', encoding='utf-8') as file:
-            wordlist = file.read().splitlines()
-            return wordlist
-    else:
-        return []
     
 
 #Interface gráfica
@@ -118,21 +106,39 @@ generate_button.pack(pady=20)
 
 def open_decrypt_window():
 
+    #Carrega a wordlist
+
+    def load_wordlist():
+        file_path = filedialog.askopenfilename()
+        if file_path:
+            with open(file_path, 'r', encoding='utf-8') as file:
+                wordlist = file.read().splitlines()
+                return wordlist
+        else:
+            return []
+
     def decrypt_hash():
         target_hash = decrypt_entry.get().strip()
         if not target_hash:
-            result_var.set("Por favor, insira um hash para descriptografar.")
+            decrypt_resultado_var.set("Por favor, insira um hash para descriptografar.")
             return
     
         wordlist = load_wordlist()
+
         if not wordlist:
-            result_var.set("Selecione uma wordlist para descriptografar.")
+            decrypt_resultado_var.set("Selecione uma wordlist para descriptografar.")
             return
 
-        #for word in wordlist:
+        for word in wordlist:
+
             #Descriptografia sha256
 
             #Descriptografia sha1
+            
+            sha_1_hash = criptsha1(word)
+            if sha_1_hash == target_hash:
+                decrypt_resultado_var.set(word)
+                return
 
             #Descriptografia md5
 
@@ -143,22 +149,27 @@ def open_decrypt_window():
     decrypt_window.title("EasyCripto")
     decrypt_window.geometry("600x500")
 
+    #Insere o hash
+
     customtkinter.CTkLabel(decrypt_window, text="Insira o hash:").pack(pady=10)
     decrypt_entry = customtkinter.CTkEntry(decrypt_window, width=500)
     decrypt_entry.pack(pady=10)
+
+    #Selcionar o tipo de hash
 
     customtkinter.CTkLabel(decrypt_window, text="Selecione o tipo de hash:").pack(pady=10)
     decrypt_hash_type_var = customtkinter.StringVar(value="SHA-256")
     decrypt_hash_type_menu = customtkinter.CTkOptionMenu(decrypt_window, variable=decrypt_hash_type_var, values=["SHA-256", "SHA-1", "bcrypt", "MD5"])
     decrypt_hash_type_menu.pack(pady=10)
 
-    load_button = customtkinter.CTkButton(decrypt_window, text="Carregar wordlist", command=load_wordlist)
-    load_button.pack(pady=10)
+    #Resultado da decodificação
 
     customtkinter.CTkLabel(decrypt_window, text="Sua Senha:").pack(pady=5)
     decrypt_resultado_var = customtkinter.StringVar()
     decrypt_resultado_label = customtkinter.CTkEntry(decrypt_window, textvariable=decrypt_resultado_var, width=250, state="readonly")
     decrypt_resultado_label.pack(pady=10)
+
+    #Botão para descriptografar
 
     generate_button2 = customtkinter.CTkButton(decrypt_window, text="Desfazer hash", command=decrypt_hash)
     generate_button2.pack(pady=20)
