@@ -69,8 +69,6 @@ def load_wordlist():
     else:
         return []
     
-#Função decripta hashes
-
 
 #Interface gráfica
     
