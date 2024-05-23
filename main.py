@@ -135,6 +135,12 @@ def open_decrypt_window():
             #Descriptografia sha256
 
             #Descriptografia sha1
+            
+        sha_1_hash = hash_object(word)
+        if sha1_hash == target_hash:
+            result_var.set(f"Hash descriptografado (SHA1): {word}")
+            return
+
 
             #Descriptografia md5
 
