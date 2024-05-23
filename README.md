@@ -83,7 +83,7 @@ Um agradecimento a todos que participaram/A thank you to everyone who participat
     </td>
     <td align="center">
       <a href="https://github.com/Rosesfox">
-        <img src="Maria Gabrielly" width="100px;" alt="Maria Gabrielly"/><br>
+        <img src="/img/maria foto.png" width="100px;" alt="Maria Gabrielly"/><br>
         <sub>
           <b>Maria Gabrielly</b>
         </sub>
@@ -116,5 +116,5 @@ Email:
 - isaquelael38@gmail.com
 - joaoestevam.1204@gmail.com
 - leonardoluna.github@gmail.com
-- maria@gmail.com
+- gs853h@gmail.com
 - camila@gmail.com
