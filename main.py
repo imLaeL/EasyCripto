@@ -133,6 +133,11 @@ def open_decrypt_window():
 
             #Descriptografia sha256
 
+            sha256_hash = criptsha256(word)
+            if sha256_hash == target_hash:
+                decrypt_resultado_var.set(word)
+                return
+
             #Descriptografia sha1
             
             sha_1_hash = criptsha1(word)
