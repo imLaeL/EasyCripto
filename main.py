@@ -57,8 +57,6 @@ def generate_hash():
 
     result_var.set(result)
     
-#Função decripta hashes
-
 
 #Interface gráfica
     
@@ -134,6 +132,11 @@ def open_decrypt_window():
         for word in wordlist:
 
             #Descriptografia sha256
+
+            sha256_hash = criptsha256(word)
+            if sha256_hash == target_hash:
+                decrypt_resultado_var.set(word)
+                return
 
             #Descriptografia sha1
             
