@@ -98,8 +98,8 @@ Um agradecimento a todos que participaram/A thank you to everyone who participat
       </a>
     </td>
       <td align="center">
-      <a href="#">
-        <img src="Camila" width="100px;" alt="Camila"/><br>
+      <a href="https://github.com/Camilamaraldev">
+        <img src="/img/Camila.png" width="100px;" alt="Camila"/><br>
         <sub>
           <b>Camila</b>
         </sub>
