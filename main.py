@@ -147,6 +147,11 @@ def open_decrypt_window():
 
             #Descriptografia md5
 
+            md5_hash = criptmd5(word)
+            if md5_hash == target_hash:
+                decrypt_resultado_var.set(word)
+                return
+
         decrypt_resultado_var.set("Nenhuma correspondência encontrada na wordlist.")
 
 
